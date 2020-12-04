@@ -4,6 +4,7 @@ GEM
     coderay (1.1.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    hash_dig_and_collect (0.0.1)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -30,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  hash_dig_and_collect
   json
   pry
   rake (~> 12.0)

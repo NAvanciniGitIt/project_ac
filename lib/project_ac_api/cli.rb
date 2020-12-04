@@ -6,7 +6,7 @@ class Cli
         main_menu_options
     end
 
-    def main_menu_options #give an option to find villagers via personality, species, or name. 
+    def main_menu_options  
         puts "Type 'find' to list Villagers."
         puts "Type 'exit' to exit program."
         main_menu
@@ -19,25 +19,28 @@ class Cli
             villager_list
         elsif input == "exit" || input == "n"
             puts "See you later!" 
-        elsif @villager = @villagers.find {|villager| villager.name == input.capitalize } #maybe list options with index instead?
+        elsif @villager = @villagers.find {|villager| villager.name == input.capitalize.gsub(" ", "") }
             villager_info
+        elsif input.to_i.between?(1, 391)
+            @villagers.each.with_index(1) do |villager, index| 
+                 @villager = villager
+                    if input.to_i == index 
+                        villager_info
+                    end
+                end
+            
         else
-            puts "Whoops! Input not recognized!"
-            main_menu_options #villager_list(would prefer it bring you back)
+            puts "Whoops! Not a valid input! Please type the name or index of the Villager you'd like to find! Or type 'n' or 'exit' to close the program."
+            main_menu
         end
     end
 
     def villager_list
         puts "Fetching friends..."
-        # iterate over villager and grab every unique species and put into an array
-        # iterate over species array 
-            # puts species:
-            # iterate over villager and find_each villager that matches the species
-                # puts that villager name
-        @villagers.each do |villager| 
-            puts villager.name
+        @villagers.each.with_index(1) do |villager, index| 
+            puts "#{index}. #{villager.name}"
         end
-        puts "Please type the name of the Villager you'd like to see, or type 'exit' to exit!"
+        puts "Please type the index or name of the Villager you'd like to see, or type 'exit' to exit!"
         main_menu
     end
 
@@ -47,7 +50,7 @@ class Cli
         puts "ʕ•́ᴥ•̀ʔっPersonality: #{@villager.personality}"
         puts "ʕ•́ᴥ•̀ʔっSpecies: #{@villager.species}"
         puts "ʕ•́ᴥ•̀ʔっCatch-phrase: #{@villager.catch_phrase}"
-        puts "Would you like to find another Villager? Type y or n to exit."
+        puts "If you'd like to find another Villager, just type the name or index! If you'd like to leave, type 'exit' or 'n'."
         main_menu
     end
 end

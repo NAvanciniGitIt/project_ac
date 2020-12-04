@@ -1,15 +1,11 @@
-# ProjectBooks
+# Project_AC
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/project_books`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+    This is an Animal Crossing New Horizons Villager finder! With this app, you'll be able to find any villager in the game and learn about their birthdays, personalities, species, and catch-phrases! Enjoy!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
-gem 'project_books'
+gem 'project_ac'
 ```
 
 And then execute:
@@ -22,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this program, please type in your terminal $ ruby bin/run.rb and then follow along with the instructions provided to you in the project. 
 
 ## Development
 

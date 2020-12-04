@@ -7,3 +7,4 @@ gem "rake", "~> 12.0"
 gem 'pry'
 gem 'rest-client'
 gem 'json'
+gem 'hash_dig_and_collect'
